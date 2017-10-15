@@ -9,9 +9,15 @@ describe('JSONMecha #find(options/callback)', function () {
     this.mecha = new JSONMecha(this.json)
   })
 
-  it('will throw an error if no valid options are passed in', function () {
+  it('will throw an error if no options are passed in', function () {
     const actual = () => this.mecha.find()
-    const error = `options or a callback function is required`
+    const error = `options object or a callback function is required`
+    expect(actual).to.throw(TypeError).with.property('message', error)
+  })
+
+  it('will throw an error if an invalid option is passed in', function () {
+    const actual = () => this.mecha.find(10)
+    const error = `options object or a callback function is required`
     expect(actual).to.throw(TypeError).with.property('message', error)
   })
 

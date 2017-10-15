@@ -1,6 +1,7 @@
 const chai = require('chai')
 const path = require('path')
 const expect = chai.expect
+const schema = require('./helpers/schema')
 const { JSONMecha } = require('../../src')
 
 describe('new JSONMecha(path, schema)', function () {
@@ -36,5 +37,11 @@ describe('new JSONMecha(path, schema)', function () {
     const actual = () => new JSONMecha(this.json, {})
     const error = `Must provide a Joi schema if using one`
     expect(actual).to.throw(TypeError).with.property('message', error)
+  })
+
+  it('should accept a Joi schema if provided', function () {
+    const actual = new JSONMecha(this.json, schema)
+    expect(actual).to.be.instanceOf(JSONMecha)
+    expect(actual._schema.isJoi).to.be.true
   })
 })

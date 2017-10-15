@@ -17,7 +17,7 @@ describe('JSONMecha #destroy(options/callback)', function () {
 
   it('will throw an error if no valid options are passed in', function () {
     const actual = () => this.mecha.destroy()
-    const error = `options or a callback function is required`
+    const error = `options object or a callback function is required`
     expect(actual).to.throw(TypeError).with.property('message', error)
   })
 

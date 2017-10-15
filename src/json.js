@@ -13,8 +13,11 @@ class JSONMecha extends Mecha {
         this._contents = json
         this._path = path
         if (schema !== undefined) {
-          if (!schema.isJoi) throw new TypeError(`Must provide a Joi schema if using one`)
-          this._schema = schema
+          if (schema.isJoi) {
+            this._schema = schema
+          } else {
+            throw new TypeError(`Must provide a Joi schema if using one`)
+          }
         }
       } else {
         throw new TypeError(`.json file must be an array`)
@@ -56,12 +59,14 @@ class JSONMecha extends Mecha {
         result = result.find(el => el[key] === value)
         if (result === undefined) throw new RangeError(`did not find element with key ${key} and value ${value}`)
       } else {
-        throw new TypeError(`options or a callback function is required`)
+        throw new TypeError(`options object or a callback function is required`)
       }
     } else if (typeof ctx === 'function') {
       result = result.find(ctx)
 
       if (result === undefined) throw new RangeError(`did not find element with callback function`)
+    } else {
+      throw new TypeError(`options object or a callback function is required`)
     }
 
     return result
