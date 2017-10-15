@@ -1,6 +1,6 @@
 {
   "name": "mecha-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Manage data from various file types",
   "author": "Wes Reid <bwreid@gmail.com>",
   "main": "src/index.js",
