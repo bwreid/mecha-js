@@ -1,11 +1,12 @@
 {
   "name": "mecha-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manage data from various file types",
   "author": "Wes Reid <bwreid@gmail.com>",
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
+    "lint": "standard --fix scripts/*.js | snazzy",
     "test": "mocha --recursive"
   },
   "repository": {
@@ -16,12 +17,18 @@
     "url": "https://github.com/bwreid/mecha-js/issues"
   },
   "dependencies": {
-    "joi": "^13.0.0",
     "fs-extra": "^4.0.2",
+    "joi": "^13.0.0",
     "uuid": "^3.1.0"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3",
+    "watchify": "^3.9.0"
   }
 }
