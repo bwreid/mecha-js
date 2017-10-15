@@ -1,0 +1,13 @@
+{
+  "id": "cf988505-e7c2-4c8b-86c0-ebb432d0d904",
+  "age": 49,
+  "name": "Kate Moses",
+  "company": "MARQET",
+  "email": "kate.moses@marqet.com",
+  "address": {
+    "line1": "755 Amity Street",
+    "city": "Canby",
+    "state": "Connecticut",
+    "zip": 30665
+  }
+}
