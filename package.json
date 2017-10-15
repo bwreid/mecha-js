@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "standard --fix scripts/*.js | snazzy",
-    "test": "mocha --recursive"
+    "test": "istanbul cover _mocha ./test/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
     "mocha": "^4.0.1",
     "snazzy": "^7.0.0",
     "standard": "^10.0.3",
